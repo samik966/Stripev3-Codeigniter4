@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Open+Sans&family=Montserrat&family=Noto+Sans&family=Poppins&family=Raleway&family=Roboto&family=Ubuntu&family=PT+Sans&display=swap" rel="stylesheet">
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url('/public_assets/css/payment.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('/assets/css/payment.css') ?>" />
     <script>
         const BASE_URL = "<?= base_url() ?>"
     </script>
@@ -85,7 +85,7 @@
 
 
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="<?= base_url('/public_assets/js/client.js') ?>" defer></script>
+    <script src="<?= base_url('/assets/js/client.js') ?>" defer></script>
 
 </body>
 
