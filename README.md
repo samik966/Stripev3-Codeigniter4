@@ -4,8 +4,8 @@ This repo is implementation of `Stripe/stripe-php` library, with **Codeigniter v
 
 # Requirements
 
-PHP 7.0 and later for Codeingiter 4
-Codeigniter 4 framework
+PHP 7.0 and later for Codeingiter 4  
+Codeigniter 4 framework  
 `Stripe/stripe-php` library
 
 ## Steps to integrate Stripe payment gateway
@@ -64,7 +64,7 @@ Now the tables are setup.
 
 It's time to run the application
 
-## 6. Finish
+### 6. Finish
 
 To access the form we have `/payment` route. After it's submission you will see an alert Confirming the payment.
 
