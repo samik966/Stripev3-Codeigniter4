@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\Frontend;
+namespace App\Controllers;
 
 use \Stripe\Stripe;
 use Stripe\PaymentIntent;
@@ -18,13 +18,15 @@ class Payments extends BaseController
         $this->db = \Config\Database::connect();
         $this->model = new Paymentmodel($this->db);
     }
-
-
-    public function index()
+    public function new()
     {
-        // This is your real test secret API key.
+        $data['amount'] = '1500 INR';
+        $data['course'] = 'Course Name';
+        return view('Frontend/payment', $data);
+    }
 
-
+    public function create()
+    {
         $this->validation->setRule('name', 'Name', 'required|min_length[3]|max_length[32]');
         $this->validation->setRule('phone', 'Phone', 'is_natural|min_length[10]|max_length[12]');
         $this->validation->setRule('stripeToken', 'Token', 'required');
@@ -39,7 +41,7 @@ class Payments extends BaseController
             $this->db->transStart();
 
             try {
-                \Stripe\Stripe::setApiKey('YOUR API KRY HERE');
+                \Stripe\Stripe::setApiKey('YOUR SECRET API KRY HERE');
 
                 $customer = \Stripe\Customer::create(array(
                     'name' => $name,
@@ -117,11 +119,5 @@ class Payments extends BaseController
             $this->session->setFlashdata('formerror', 'Make sure all fields are filled');
         }
         return redirect()->route('payments');
-    }
-    public function create()
-    {
-        $data['amount'] = '1500 INR';
-        $data['course'] = 'Course Name';
-        return view('Frontend/payment', $data);
     }
 }
